@@ -14,4 +14,5 @@ crate mod to_array;
 crate mod view;
 crate mod where_;
 
+crate use command::command;
 crate use to_array::stream_to_array;
