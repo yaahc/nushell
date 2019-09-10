@@ -15,7 +15,7 @@ fn ls_lists_regular_files() {
         let actual = nu!(
             cwd: dirs.test(), h::pipeline(
             r#"
-                ls
+                nls
                 | get name
                 | lines
                 | split-column "."
@@ -43,7 +43,7 @@ fn ls_lists_regular_files_using_asterisk_wildcard() {
         let actual = nu!(
             cwd: dirs.test(), h::pipeline(
             r#"
-                ls *.txt
+                nls *.txt
                 | get name
                 | lines
                 | split-column "."
@@ -71,7 +71,7 @@ fn ls_lists_regular_files_using_question_mark_wildcard() {
         let actual = nu!(
             cwd: dirs.test(), h::pipeline(
             r#"
-                ls *.??.txt
+                nls *.??.txt
                 | get name
                 | lines
                 | split-column "."

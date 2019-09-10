@@ -499,7 +499,7 @@ fn can_sum() {
 fn can_filter_by_unit_size_comparison() {
     let actual = nu!(
         cwd: "tests/fixtures/formats",
-        "ls | where size > 1kb | sort-by size | get name | first 1 | trim | echo $it"
+        "nls | where size > 1kb | sort-by size | get name | first 1 | trim | echo $it"
     );
 
     assert_eq!(actual, "cargo_sample.toml");
@@ -509,7 +509,7 @@ fn can_filter_by_unit_size_comparison() {
 fn can_get_last() {
     let actual = nu!(
         cwd: "tests/fixtures/formats",
-        "ls | sort-by name | last 1 | get name | trim | echo $it"
+        "nls | sort-by name | last 1 | get name | trim | echo $it"
     );
 
     assert_eq!(actual, "utf16.ini");
@@ -519,7 +519,7 @@ fn can_get_last() {
 fn can_get_reverse_first() {
     let actual = nu!(
         cwd: "tests/fixtures/formats",
-        "ls | sort-by name | reverse | first 1 | get name | trim | echo $it"
+        "nls | sort-by name | reverse | first 1 | get name | trim | echo $it"
     );
 
     assert_eq!(actual, "utf16.ini");

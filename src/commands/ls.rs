@@ -12,7 +12,7 @@ pub struct LsArgs {
 
 impl WholeStreamCommand for LS {
     fn name(&self) -> &str {
-        "ls"
+        "nls"
     }
 
     fn signature(&self) -> Signature {
